@@ -27,19 +27,21 @@ function initApp() {
     statsSpecialDefence:100,
     statsSpeed: 81,
   };
-  function fetchJSON(){}
   
-  function showPokemon(pokemon){}
-  showPokemons(gyarados)
+  showPokemon(gyarados)
+  showPokemon(gyarados)
+  showPokemon(gyarados)
+
 }
-function showPokemons(image, name,dexindex,type) {
+function showPokemon(pokemon) {
   const myHTML = /*HTML*/ `
-<article><img src=${pokemon.image}>
+            <article class="grid-item">
+                <img src="${pokemon.image}">
                 <h2>${pokemon.name}</h2>
-                <p>${pokemon.house}</p>
-                <p>${pokemon.dexindex}</p>
                 <p>${pokemon.type}</p>
+                <p>${pokemon.dexindex}</p>
+                <p>${pokemon.subtype}</p>
             </article>
             `;
-  document.querySelector("#characters").insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#pokemon").insertAdjacentHTML("beforeend", myHTML);
 }
