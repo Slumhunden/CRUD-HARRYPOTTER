@@ -1,35 +1,40 @@
 "use strict";
 window.addEventListener("load", initApp);
 
-function initApp() {
+async function initApp() {
   // Pokémon
   const gyarados = {
-    name: "Gyarados",
-    description:
-      "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.",
-    ability: "Intidmidate",
-    image: "https://img.pokemondb.net/artwork/large/gyarados.jpg",
-    footprint: null,
-    dexindex: 130,
-    type: "water",
-    subtype: "flying",
-    weaknesses: "electric, rock moves",
-    gender: "male eller female",
-    weight: 235000,
-    height: 650,
-    generation: 1,
-    gameversion: 1,
-    canEvolve: true,
-    statsHP: 95,
-    statsAttack: 125,
-    statsDefence: 79,
-    statsSpecialAttack: 60,
-    statsSpecialDefence: 100,
-    statsSpeed: 81,
+    // name: "Gyarados",
+    // description:
+    //   "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.",
+    // ability: "Intidmidate",
+    // image: "https://img.pokemondb.net/artwork/large/gyarados.jpg",
+    // footprint: null,
+    // dexindex: 130,
+    // type: "water",
+    // subtype: "flying",
+    // weaknesses: "electric, rock moves",
+    // gender: "male eller female",
+    // weight: 235000,
+    // height: 650,
+    // generation: 1,
+    // gameversion: 1,
+    // canEvolve: true,
+    // statsHP: 95,
+    // statsAttack: 125,
+    // statsDefence: 79,
+    // statsSpecialAttack: 60,
+    // statsSpecialDefence: 100,
+    // statsSpeed: 81,
   };
-  showPokemon(gyarados);
+  const pokemon = await getPokemon();
+  showPokemon(pokemon);
 }
-
+async function getPokemon(){
+  const response = await fetch ("gyarados.json")
+  const data = await response.json()
+  return data 
+}
 function showPokemon(pokemon) {
   const myHTML = /*HTML*/ `
             <article class="grid-item">
@@ -50,31 +55,32 @@ function showPokemon(pokemon) {
   }
 }
 function showPokeModal(pokemon){
+        document.querySelector("#dialog-image").src = pokemon.image;
         document.querySelector("#dialog-name").textContent = "Name: " + pokemon.name;
-        document.querySelector("#description").textContent = "Description: " +
+        document.querySelector("#dialog-description").textContent = "Description: " +
           pokemon.description;
-        document.querySelector("#ability").textContent = "Ability: " + pokemon.ability;
-        document.querySelector("#footprint").textContent = "Footprint: " + pokemon.footprint;
-        document.querySelector("#dexindex").textContent = "Dexindex: " + pokemon.dexindex;
-        document.querySelector("#type").textContent = "Type: " + pokemon.type;
-        document.querySelector("#subtype").textContent = "Subtype: " + pokemon.subtype;
-        document.querySelector("#weaknesses").textContent = "Weaknesses: " + pokemon.weaknesses;
-        document.querySelector("#gender").textContent = "Gender: " + pokemon.gender;
-        document.querySelector("#weight").textContent = "Weight: " + pokemon.weight;
-        document.querySelector("#height").textContent = "Height: " + pokemon.height;
-        document.querySelector("#generation").textContent ="Generation: " + pokemon.generation;
-        document.querySelector("#gameversion").textContent = "Gameversion: " +
+        document.querySelector("#dialog-ability").textContent = "Ability: " + pokemon.ability;
+        document.querySelector("#dialog-footprint").textContent = "Footprint: " + pokemon.footprint;
+        document.querySelector("#dialog-dexindex").textContent = "#" + pokemon.dexindex;
+        document.querySelector("#dialog-type").textContent = "Type: " + pokemon.type;
+        document.querySelector("#dialog-subtype").textContent = "Subtype: " + pokemon.subtype;
+        document.querySelector("#dialog-weaknesses").textContent = "Weaknesses: " + pokemon.weaknesses;
+        document.querySelector("#dialog-gender").textContent = "Gender: " + pokemon.gender;
+        document.querySelector("#dialog-weight").textContent = "Weight: " + pokemon.weight;
+        document.querySelector("#dialog-height").textContent = "Height: " + pokemon.height;
+        document.querySelector("#dialog-generation").textContent ="Generation: " + pokemon.generation;
+        document.querySelector("#dialog-gameversion").textContent = "Gameversion: " +
           pokemon.gameversion;
-        document.querySelector("#canEvolve").textContent ="Can Evolve?" + pokemon.canEvolve;
-        document.querySelector("#statsHP").textContent ="Health Points: " + pokemon.statsHP;
-        document.querySelector("#statsAttack").textContent = "Attack: " +
+        document.querySelector("#dialog-canEvolve").textContent ="Can Evolve?" + pokemon.canEvolve;
+        document.querySelector("#dialog-statsHP").textContent ="HP: " + pokemon.statsHP;
+        document.querySelector("#dialog-statsAttack").textContent = "Attack: " +
           pokemon.statsAttack;
-        document.querySelector("#statsDefence").textContent =
+        document.querySelector("#dialog-statsDefence").textContent = "Defence: " +
           pokemon.statsDefence;
-        document.querySelector("#statsSpecialAttack").textContent =
+        document.querySelector("#dialog-statsSpecialAttack").textContent = "Special Attack: " +
           pokemon.statsSpecialAttack;
-        document.querySelector("#statsSpecialDefence").textContent =
+        document.querySelector("#dialog-statsSpecialDefence").textContent = "Special Defence: " +
           pokemon.statsSpecialDefence;
-        document.querySelector("#statsSpeed").textContent = pokemon.statsSpeed;
-        document.querySelector("#pokemonbox").showModal();
+        document.querySelector("#dialog-statsSpeed").textContent = "Speed: " + pokemon.statsSpeed;
+        document.querySelector("#dialog-pokemonbox").showModal();
 }

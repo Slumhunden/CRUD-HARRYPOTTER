@@ -11,31 +11,45 @@
     <header>
       <h1>Pokedex</h1>
     </header>
-    <dialog id="pokemonbox">
-      <h2 id="dialog-name">name</h2>
-      <p id="dialog-type"></p>
-      <ul>
-        <li id="description"></li>
-        <li id="ability"></li>
-        <li id="footprint"></li>
-        <li id="dexindex"></li>
-        <li id="type"></li>
-        <li id="subtype"></li>
-        <li id="weaknesses"></li>
-        <li id="gender"></li>
-        <li id="weight"></li>
-        <li id="height"></li>
-        <li id="generation"></li>
-        <li id="gameversion"></li>
-        <li id="canEvolve"></li>
-        <li id="statsHP"></li>
-        <li id="statsAttack"></li>
-        <li id="statsDefence"></li>
-        <li id="statsSpecialAttack"></li>
-        <li id="statsSpecialDefence"></li>
-        <li id="statsSpeed"></li>
-      </ul>
-      <img src="" />
+    <dialog id="dialog-pokemonbox">
+      <section class="dialog-grid">
+        <img id="dialog-image" src="" />
+        <section>
+        <p id="dialog-dexindex"></p>
+          <h2 id="dialog-name">Name</h2>
+          <h3 id="dialog-type"></h3>
+
+          <p id="dialog-description"</p>
+            <h4>Basics</h4>
+          <ul>
+              <li id="dialog-subtype"></li>
+            <li id="dialog-ability"></li>
+            <li id="dialog-footprint"></li>
+            <li id="dialog-weaknesses"></li>
+            </ul>
+            <h4>Personal Info</h4>
+            <ul>
+            <li id="dialog-gender"></li>
+            <li id="dialog-weight"></li>
+            <li id="dialog-height"></li>
+            <li id="dialog-generation"></li>
+            <li id="dialog-gameversion"></li>
+            <li id="dialog-canEvolve"></li>
+            </ul>
+            <h4>Stats</h4>
+            <ul>
+            <li id="dialog-statsHP"></li>
+            <li id="dialog-statsAttack"></li>
+            <li id="dialog-statsDefence"></li>
+            <li id="dialog-statsSpecialAttack"></li>
+            <li id="dialog-statsSpecialDefence"></li>
+            <li id="dialog-statsSpeed"></li>
+          </ul>
+        </section>
+      </section>
+      <form method="dialog">
+        <button>Close</button>
+      </form>
     </dialog>
     <main>
       <section id="pokemon" class="grid-container"></section>

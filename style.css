@@ -1,56 +1,77 @@
-.header{
-    text-align: center;
-}
-.grid-container{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
-    padding: 1.5em;
-}
-.grid-item{
-    padding: 1em;
-}
-.grid-item img{
-    width: 100%;
-    height: 400px;
-}
-dialog{
-    width: 65vw;
-    background-color: blue;
-    font-style: white
-}
- @media (min-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media (min-width: 1200px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-@media (min-width: 1500px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-}
-main {
-    background-color: lightgray;
-    padding: 140px 0 0;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #8d2f04;
+    padding: 1em 0 1em 0;
 }
-body{
-margin: 0;
-font-family: Arial, Helvetica, sans-serif;
-text-emphasis-color: black;
-font-size: 1.3em;
+
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin: 0;
+    background-color: #04448d;
+    padding: 1em 0 1em 0;
+}
+
+main {
+    background-color: rgb(144, 238, 221);
+}
+
+/* Grid styling on main */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+.grid-item {
+    background-color: rgb(51, 156, 144);
+    padding: 1em;
+}
+
+.grid-item:hover {
+    box-shadow: 0 8px 16px 0 black;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+}
+
+.grid-item p {
+    padding-left: 0.5em;
+}
+
+.grid-item h2 {
+    padding-left: 0.3em
+}
+
+/* Dialog styling */
+dialog {
+    width: 65vw;
+    background-color: rgb(0, 137, 211);
+}
+
+.dialog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+dialog h4 {
+    margin-bottom: 0;
 }

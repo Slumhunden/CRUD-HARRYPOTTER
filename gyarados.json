@@ -1,0 +1,23 @@
+{
+  "name": "Gyarados",
+  "description": "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.",
+  "ability": "Intidmidate",
+  "image": "https://img.pokemondb.net/artwork/large/gyarados.jpg",
+  "footprint": null,
+  "dexindex": 130,
+  "type": "Water",
+  "subtype": "Flying",
+  "weaknesses": "electric, rock moves",
+  "gender": "male eller female",
+  "weight": 235000,
+  "height": 650,
+  "generation": 1,
+  "gameversion": 1,
+  "canEvolve": true,
+  "statsHP": 95,
+  "statsAttack": 125,
+  "statsDefence": 79,
+  "statsSpecialAttack": 60,
+  "statsSpecialDefence": 100,
+  "statsSpeed": 81
+}
