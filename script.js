@@ -34,40 +34,47 @@ function showPokemon(pokemon) {
   const myHTML = /*HTML*/ `
             <article class="grid-item">
                 <img src="${pokemon.image}">
-                <h2>${pokemon.name}</h2>
-                <p>${pokemon.type}</p>
-                <p>${pokemon.dexindex}</p>
-                <p>${pokemon.subtype}</p>
+                <h2>Name: ${pokemon.name}</h2>
+                <p>Type: ${pokemon.type}</p>
+                <p>Dexindex: ${pokemon.dexindex}</p>
+                <p>Subtype: ${pokemon.subtype}</p>
                 </article>
                 `;
                 document.querySelector("#pokemon").insertAdjacentHTML("beforeend", myHTML);
                 document
                   .querySelector("#pokemon article:last-child")
                   .addEventListener("click", pokemonClicked);
-                  
-    function pokemonClicked(pokemon) {
-      document.querySelector("#dialog-name").textContent = pokemon.name;
-      document.querySelector("#description").textContent = pokemon.description;
-      document.querySelector("#ability").textContent = pokemon.ability;
-      document.querySelector("#footprint").textContent = pokemon.footprint;
-      document.querySelector("#dexindex").textContent = pokemon.dexindex;
-      document.querySelector("#type").textContent = pokemon.type;
-      document.querySelector("#subtype").textContent = pokemon.subtype;
-      document.querySelector("#weaknesses").textContent = pokemon.weaknesses;
-      document.querySelector("#gender").textContent = pokemon.gender;
-      document.querySelector("#weight").textContent = pokemon.weight;
-      document.querySelector("#height").textContent = pokemon.height;
-      document.querySelector("#generation").textContent = pokemon.generation;
-      document.querySelector("#gameversion").textContent = pokemon.gameversion;
-      document.querySelector("#canEvolve").textContent = pokemon.canEvolve;
-      document.querySelector("#statsHP").textContent = pokemon.statsHP;
-      document.querySelector("#statsAttack").textContent = pokemon.statsAttack;
-      document.querySelector("#statsDefence").textContent = pokemon.statsDefence;
-      document.querySelector("#statsSpecialAttack").textContent =
-        pokemon.statsSpecialAttack;
-      document.querySelector("#statsSpecialDefence").textContent =
-        pokemon.statsSpecialDefence;
-      document.querySelector("#statsSpeed").textContent = pokemon.statsSpeed;
-      document.querySelector("#pokemonbox").showModal()
+
+    function pokemonClicked() {
+     showPokeModal(pokemon)
   }
+}
+function showPokeModal(pokemon){
+        document.querySelector("#dialog-name").textContent = "Name: " + pokemon.name;
+        document.querySelector("#description").textContent = "Description: " +
+          pokemon.description;
+        document.querySelector("#ability").textContent = "Ability: " + pokemon.ability;
+        document.querySelector("#footprint").textContent = "Footprint: " + pokemon.footprint;
+        document.querySelector("#dexindex").textContent = "Dexindex: " + pokemon.dexindex;
+        document.querySelector("#type").textContent = "Type: " + pokemon.type;
+        document.querySelector("#subtype").textContent = "Subtype: " + pokemon.subtype;
+        document.querySelector("#weaknesses").textContent = "Weaknesses: " + pokemon.weaknesses;
+        document.querySelector("#gender").textContent = "Gender: " + pokemon.gender;
+        document.querySelector("#weight").textContent = "Weight: " + pokemon.weight;
+        document.querySelector("#height").textContent = "Height: " + pokemon.height;
+        document.querySelector("#generation").textContent ="Generation: " + pokemon.generation;
+        document.querySelector("#gameversion").textContent = "Gameversion: " +
+          pokemon.gameversion;
+        document.querySelector("#canEvolve").textContent ="Can Evolve?" + pokemon.canEvolve;
+        document.querySelector("#statsHP").textContent ="Health Points: " + pokemon.statsHP;
+        document.querySelector("#statsAttack").textContent = "Attack: " +
+          pokemon.statsAttack;
+        document.querySelector("#statsDefence").textContent =
+          pokemon.statsDefence;
+        document.querySelector("#statsSpecialAttack").textContent =
+          pokemon.statsSpecialAttack;
+        document.querySelector("#statsSpecialDefence").textContent =
+          pokemon.statsSpecialDefence;
+        document.querySelector("#statsSpeed").textContent = pokemon.statsSpeed;
+        document.querySelector("#pokemonbox").showModal();
 }
