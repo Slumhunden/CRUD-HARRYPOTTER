@@ -71,7 +71,8 @@ function showPokeModal(pokemon){
         document.querySelector("#dialog-generation").textContent ="Generation: " + pokemon.generation;
         document.querySelector("#dialog-gameversion").textContent = "Gameversion: " +
           pokemon.gameversion;
-        document.querySelector("#dialog-canEvolve").textContent ="Can Evolve?" + pokemon.canEvolve;
+          const evolve = canEvolve(pokemon)
+        document.querySelector("#dialog-canEvolve").textContent =evolve;
         document.querySelector("#dialog-statsHP").textContent ="HP: " + pokemon.statsHP;
         document.querySelector("#dialog-statsAttack").textContent = "Attack: " +
           pokemon.statsAttack;
@@ -83,4 +84,13 @@ function showPokeModal(pokemon){
           pokemon.statsSpecialDefence;
         document.querySelector("#dialog-statsSpeed").textContent = "Speed: " + pokemon.statsSpeed;
         document.querySelector("#dialog-pokemonbox").showModal();
+}
+function canEvolve(pokemon){
+  let evolve = "";
+  if (pokemon.canEvolve){
+    evolve = `${pokemon.name} can evolve`
+  } else {
+      evolve =`${pokemon.name} cannot evolve`
+  }
+  return evolve;
 }
