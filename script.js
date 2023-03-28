@@ -20,7 +20,7 @@ function showPokemon(pokemon) {
                 <img src="${pokemon.image}">
                 <h2>Name: ${pokemon.name}</h2>
                 <p>Type: ${pokemon.type}</p>
-                <p>Dexindex: ${pokemon.dexIndex}</p>
+                <p>Dexindex: ${pokemon.dexindex}</p>
                 <p>Subtype: ${pokemon.subtype}</p>
                 </article>
                 `;
@@ -39,8 +39,8 @@ function showPokeModal(pokemon){
         document.querySelector("#dialog-description").textContent = "Description: " +
           pokemon.description;
         document.querySelector("#dialog-ability").textContent = "Ability: " + pokemon.ability;
-        document.querySelector("#dialog-footprint").textContent = "Footprint: " + pokemon.footprint;
-        document.querySelector("#dialog-dexIndex").textContent = "#" + pokemon.dexindex;
+        document.querySelector("#dialog-footprint").src = pokemon.footprint;
+        document.querySelector("#dialog-dexindex").textContent = "#" + pokemon.dexindex;
         document.querySelector("#dialog-type").textContent = "Type: " + pokemon.type;
         document.querySelector("#dialog-subtype").textContent = "Subtype: " + pokemon.subtype;
         document.querySelector("#dialog-weaknesses").textContent = "Weaknesses: " + pokemon.weaknesses;
@@ -48,8 +48,8 @@ function showPokeModal(pokemon){
         document.querySelector("#dialog-weight").textContent = "Weight: " + pokemon.weight;
         document.querySelector("#dialog-height").textContent = "Height: " + pokemon.height;
         document.querySelector("#dialog-generation").textContent ="Generation: " + pokemon.generation;
-        document.querySelector("#dialog-gameversion").textContent = "Gameversion: " +
-          pokemon.gameversion;
+        document.querySelector("#dialog-spilversion").textContent = "spilversion: " +
+          pokemon.spilversion;
           const evolve = canEvolve(pokemon)
         document.querySelector("#dialog-canEvolve").textContent =evolve;
         document.querySelector("#dialog-statsHP").textContent ="HP: " + pokemon.statsHP;

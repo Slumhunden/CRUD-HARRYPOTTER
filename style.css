@@ -60,7 +60,14 @@ main {
 .grid-item h2 {
     padding-left: 0.3em
 }
-
+button {
+    text-align: center;
+    text-transform: uppercase;
+    color: aquamarine;
+    background-color: black;
+    width: 100%;
+    padding: 0.5em 1em;
+}
 /* Dialog styling */
 dialog {
     width: 65vw;
